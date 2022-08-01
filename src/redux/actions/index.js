@@ -7,7 +7,9 @@ export const loginAction = (email) => ({
   email,
 });
 
-export const walletAction = (info) => ({
-  type: WALLET_INPUT,
-  info,
-});
+// REQUISIÇÃO
+export const getCurrencies = () => (dispatch) => fetch('https://economia.awesomeapi.com.br/json/all')
+  .then((response) => response.json())
+  .then((data) => dispatch({
+    type: WALLET_INPUT,
+    currencies: Object.keys(data).filter((key) => key !== 'USDT') }));
