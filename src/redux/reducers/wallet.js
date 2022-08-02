@@ -15,12 +15,13 @@ const walletReducer = (state = INITIAL_STATE, action) => {
       currencies: action.currencies,
     };
   case WALLET_EXPENSES:
+    console.log(action);
     return {
       ...state,
       expenses: [...state.expenses, {
         id: state.expenseId,
         ...action.expense,
-        exchangeRates: action.exchangeRates }],
+        exchangeRates: action.data }],
       expenseId: state.expenseId + 1,
     };
   default:
