@@ -7,14 +7,14 @@ class Table extends Component {
     const { expenses } = this.props;
     return (
       <div>
-        <table>
-          <thead className="table-title">
+        <table id="table">
+          <thead data-testid="table-title">
             <tr>
-              <th>Descrição</th>
-              <th>Tag</th>
-              <th>Método de pagamento</th>
-              <th>Valor</th>
-              <th>Moeda</th>
+              <th data-testid="description">Descrição</th>
+              <th data-testid="tag-field">Tag</th>
+              <th data-testid="method-field">Método de pagamento</th>
+              <th data-testid="value-field">Valor</th>
+              <th data-testid="currency-field">Moeda</th>
               <th>Câmbio utilizado</th>
               <th>Valor convertido</th>
               <th>Moeda de conversão</th>
